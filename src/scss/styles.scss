@@ -3,31 +3,39 @@
 
 html {
     font-size: 62.5%;
-}
-
-p, span, a, input, button, .column {
-    font-size: 2rem;
-}
-
-h6 {
-    font-size: 3.2rem;
-}
-h5 {
-    font-size: 3.6rem;
-}
-h4 {
-    font-size: 4rem;
-}
-h3 {
-    font-size: 4.4rem;
-}
-h2 {
-    font-size: 4.8rem;
-}
-h1 {
-    font-size: 5.2rem;
+    height: 100vh;
 }
 
 body {
-    background-color: pink;
+    min-height: 100%;
+    background-color: white;
 }
+
+p, span, a, input, button, div, .columns {
+    font-size: 2.4rem;
+}
+
+h6 {
+    font-weight: bold;
+    font-size: 3.2rem!important;
+} 
+h5 {
+    font-size: 3.6rem!important;
+    font-weight: bold;
+} 
+h4 {
+    font-weight: bold;
+    font-size: 4rem!important;
+} 
+h3 {
+    font-weight: bold;
+    font-size: 4.4rem!important;
+} 
+h2 {
+    font-weight: bold;
+    font-size: 4.8rem!important;
+} 
+h1 {
+    font-size: 5.2rem!important;
+}
+
