@@ -1,6 +1,33 @@
 @import '../../node_modules/bulma/bulma.sass';
 @import 'mixins';
 
+html {
+    font-size: 62.5%;
+}
+
+p, span, a, input, button, .column {
+    font-size: 2rem;
+}
+
+h6 {
+    font-size: 3.2rem;
+}
+h5 {
+    font-size: 3.6rem;
+}
+h4 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 4.4rem;
+}
+h2 {
+    font-size: 4.8rem;
+}
+h1 {
+    font-size: 5.2rem;
+}
+
 body {
     background-color: pink;
 }

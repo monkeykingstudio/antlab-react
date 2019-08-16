@@ -1,4 +1,6 @@
 import React from 'react';
+import 'bulma';
+import './scss/styles.scss'
 
 function App() {
   return (
