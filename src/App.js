@@ -2,34 +2,12 @@ import React from 'react';
 import 'bulma';
 import './scss/styles.scss'
 
+import Home from './components/Home/index';
+
 function App() {
   return (
     <div className="App">
-      <section className="section">
-        <div className="container">
-          <h1 className="">
-            Hello World
-          </h1>
-          <p className="">
-            My first website with <strong>Bulma</strong>!
-          </p>
-        </div>
-      </section>
-
-      <div className="columns">
-        <div className="column">
-          First column
-        </div>
-        <div className="column">
-          Second column
-        </div>
-        <div className="column">
-          Third column
-        </div>
-        <div className="column">
-          Fourth column
-        </div>
-      </div>
+      <Home id='Home'/>
     </div>
   );
 }

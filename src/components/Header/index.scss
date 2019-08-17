@@ -1,0 +1,9 @@
+@import '../../scss/global/colors';
+
+#Header {
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    span {color: $green;}
+}

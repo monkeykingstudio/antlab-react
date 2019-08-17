@@ -1,0 +1,10 @@
+@import '../../scss/global/colors';
+
+#Navbar {
+    display: flex;
+    flex-direction: column;
+    width: 24rem;
+    background-color: $dark-grey;
+    color: white;
+    padding: 15px;
+}

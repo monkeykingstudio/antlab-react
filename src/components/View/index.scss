@@ -1,0 +1,8 @@
+@import '../../scss/global/colors';
+
+#View {
+    display: flex;
+    flex-direction: column;
+    background-color: $light-grey;
+    flex: 1;
+}
