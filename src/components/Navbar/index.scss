@@ -1,10 +1,17 @@
 @import '../../scss/global/colors';
+@import '../../scss/global/fonts';
 
 #Navbar {
     display: flex;
     flex-direction: column;
     width: 24rem;
     background-color: $dark-grey;
-    color: white;
     padding: 15px;
+
+    span {
+        color: white;
+        font-family: 'Myriad Pro';
+        white-space: nowrap;
+
+    }
 }
