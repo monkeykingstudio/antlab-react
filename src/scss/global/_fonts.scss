@@ -1,21 +1,3 @@
-// Minion Pro Regular
-$minion-pro-regular-family: 'Minion Pro';
-$minion-pro-regular-url: '../../webfonts/MinionPro-Regular.woff';
-$minion-pro-regular-font-weight: normal;
-$minion-pro-regular-style: normal;
-
-// Minion Pro Bold
-$minion-pro-bold-family: 'Minion Pro';
-$minion-pro-bold-url: '../../webfonts/MinionPro-Bold.woff';
-$minion-pro-bold-font-weight: bold;
-$minion-pro-bold-style: normal;
-
-// Myriad Pro Black
-$myriad-pro-black-family: 'Myriad Pro';
-$myriad-pro-black-url: '../../webfonts/MyriadPro-Black.woff';
-$myriad-pro-black-font-weight: 900;
-$myriad-pro-black-style: normal;
-
 @font-face {
     font-family: 'Minion Pro';
     src: url('../../webfonts/MinionPro-Regular.woff2') format('woff2'),
@@ -29,6 +11,14 @@ $myriad-pro-black-style: normal;
     src: url('../../webfonts/MyriadPro-Black.woff2') format('woff2'),
          url('../../webfonts/MyriadPro-Black.woff') format('woff');
          font-weight: 900;
+         font-style: normal;
+}
+
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    src: url('../../webfonts/MyriadPro-Regular.woff2') format('woff2'),
+         url('../../webfonts/MyriadPro-Regular.woff') format('woff');
+         font-weight: normal;
          font-style: normal;
 }
 

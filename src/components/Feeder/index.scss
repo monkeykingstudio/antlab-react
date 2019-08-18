@@ -1,9 +1,11 @@
 #Feeder {
+    display: flex;
+    flex-direction: column;
     background-color: white;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     border-radius: .4rem;
 
     .title {
-        text-transform: uppercase;
+        text-transform: capitalize;
     }
 }
