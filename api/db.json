@@ -1,0 +1,16 @@
+{
+    "companies": [{
+            "id": 1,
+            "name": "Microsoft"
+        },
+        {
+            "id": 2,
+            "name": "Facebook"
+        },
+        {
+            "id": 3,
+            "name": "Amazon"
+        }
+    ]
+
+}
