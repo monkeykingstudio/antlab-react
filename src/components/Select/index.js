@@ -1,20 +1,30 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './index.scss';
 
 import Option from './option'
+import { statement } from '@babel/template';
 
 const Select = (props) => {
+    const [selectedValue, setSelectedValue] = useState('select food');
     
-   const handleChange = () => {
-        console.log("changed!");
+    // useEffect(() => {
+    //     setSelectedValue('food')
+    // });
+
+    const handleChange = (e) => {
+        setSelectedValue(e.target.value)
     }
 
-    console.log('props options' , props.options);
-
     return (     
-       <form action="">
-        <select id={props.id} value={props.options[0]}>
-                <Option />
+       <form>
+        <select id={props.id} value={selectedValue} onChange={handleChange}>
+                {props.options.map((option, i) => (
+                    <Option
+                        value={props.options[i]}
+                        key={i}
+                        id={i}
+                    />
+                ))}
             </select>
        </form>
     );

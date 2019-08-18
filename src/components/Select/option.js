@@ -4,7 +4,7 @@ import './index.scss';
 const Option = (props) => {
 
     return (     
-        <option value="">bwah</option>
+        <option>{props.value}</option>
     );
 };
 

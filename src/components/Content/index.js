@@ -10,10 +10,7 @@ const Content = (props) => {
                 <div className="column is-one-quarter">
                     <Feeder title='feed ants' id='Feeder'/>
                 </div>
-
-        
-            </div>
-           
+            </div> 
         </div>
     );
 };
