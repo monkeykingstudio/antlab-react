@@ -5,7 +5,16 @@ const Navbar = (props) => {
 
     return (
         <div id={props.id}>
-            <span>Navbar component</span>
+        <div className="logo-container">
+            <div className='logo'></div>
+            <div className='sub-title'>
+                <span>ant</span>
+                <span>Lab</span>
+            </div>
+        </div>
+
+            <div className='square'></div>
+
         </div>
     );
 };

@@ -4,6 +4,7 @@
 #Navbar {
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 24rem;
     background-color: $dark-grey;
     padding: 15px;
@@ -12,6 +13,86 @@
         color: white;
         font-family: 'Myriad Pro';
         white-space: nowrap;
-
     }
+
+   .logo-container {
+       display: flex;
+       align-items: center;
+       margin-top: 5px;
+
+    .logo {
+        top: -.1rem;
+        position: relative;
+        background-image: url('../../img/logo.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 4rem;
+        width: 3.5rem;
+        margin: 5px 5px 5px 25px;
+
+        // &:before {
+        //     font-size: 1rem;
+        //     color: $green;
+        //     background-color: white;
+        //     border-radius: 36rem;
+        //     padding: 0 5px;
+        //     content: 'bêta';
+        //     position: absolute;
+        // }
+    }
+
+    .sub-title {
+       span {
+        position: relative;
+        text-transform: capitalize;
+        color: $green;
+        font-size: 3rem;
+        font-family: 'Myriad Pro';
+        &:last-child {
+            color: white;
+            font-size: 3rem;
+            font-family: 'Myriad Pro';
+            text-transform: capitalize;
+
+            &:after {
+                content: ' ';
+                background-color: white;
+                height: 8px;
+                width: 8px;
+                position: absolute;
+                top: 22px;
+                right: -12px;
+                -webkit-animation:rescale 2s infinite;
+                animation: rescale 2s infinite;
+                @-webkit-keyframes rescale{
+                    0% {transform:rotate(0deg);}
+                    10% {transform:rotate(36deg);}
+                    20% {transform:rotate(72deg);}
+                    30% {transform:rotate(108deg);}
+                    40% {transform:rotate(144deg);}
+                    50% {transform:rotate(180deg);}
+                    60% {transform:rotate(216deg);}
+                    70% {transform:rotate(252deg);}
+                    80% {transform:rotate(288deg);}
+                    90% {transform:rotate(334deg);}
+                    100% {transform:rotate(360deg);}
+                }               
+                @keyframes rescale{
+                0% {transform:rotate(0deg);}
+                10% {transform:rotate(36deg);}
+                20% {transform:rotate(72deg);}
+                30% {transform:rotate(108deg);}
+                40% {transform:rotate(144deg);}
+                50% {transform:rotate(180deg);}
+                60% {transform:rotate(216deg);}
+                70% {transform:rotate(252deg);}
+                80% {transform:rotate(288deg);}
+                90% {transform:rotate(334deg);}
+                100% {transform:rotate(360deg);}
+                }
+            }
+        }
+       }
+    }
+   }
 }
