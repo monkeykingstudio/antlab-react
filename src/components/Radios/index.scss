@@ -45,6 +45,10 @@
         cursor: pointer;
 
         &:hover {
+          -webkit-animation-name: jello;
+          animation-name: jello;
+          -webkit-transform-origin: center;
+          transform-origin: center;
           &:before {
             transition: all .2s;
             border: .1rem solid $green;
