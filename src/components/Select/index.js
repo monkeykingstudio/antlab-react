@@ -4,21 +4,22 @@ import './index.scss';
 import Option from './option'
 
 const Select = (props) => {
-    const [selectedValue, setSelectedValue] = useState('select food');
-    const [selectedPeriod, setSelectedPeriod] = useState('');
-    const [date, setDate] = useState();
+    const initState = props.options[0];
+    const [selectedValue, setSelectedValue] = useState(initState);
+    // const [selectedPeriod, setSelectedPeriod] = useState('');
+    // const [date, setDate] = useState();
     
     useEffect(() => {
 
     });
 
     const handleChange = (e) => {
-        setSelectedValue(e.target.value)
+        setSelectedValue(e.target.value);
+        props.setFeederFood(e.target.value);
     }
 
     return (     
-       <form>
-        <select id={props.id} value={selectedValue} onChange={handleChange}>
+        <select id={props.id} value={selectedValue}  onChange={handleChange}>
                 {props.options.map((option, i) => (
                     <Option
                         value={props.options[i]}
@@ -27,7 +28,6 @@ const Select = (props) => {
                     />
                 ))}
             </select>
-       </form>
     );
 };
 

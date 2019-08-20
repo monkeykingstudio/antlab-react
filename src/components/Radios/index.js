@@ -5,7 +5,11 @@ import Radio from './radio';
 
 const Radios = (props) => {
     const amount = props.amount;
-    const [radioCheck, setRadioCheck] = useState(3);
+    const [radioCheck, setRadioCheck] = useState(null);
+
+    const setFeederDayTime = (e) => {
+       props.setFeederDayTime(e);
+    }
 
     return (
        <div id={props.id}>
@@ -19,10 +23,11 @@ const Radios = (props) => {
                'evening'
             ]}
             checked={radioCheck === i}
-           
+            onClick={() => {
+               setFeederDayTime(i)
+            }}
             onChange={() => {
-               console.log('change!')
-               setRadioCheck(i)
+               setRadioCheck(i);
             }}
             />
         ))}

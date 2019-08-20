@@ -7,14 +7,18 @@
     padding: 1rem 1.5rem;
     border-radius: .4rem;
 
-    .title {
-        text-transform: capitalize;
-        margin: 1rem 0 1.5rem 0;
-    }
-
-    button {
-        margin: 1rem 0 .5rem 0;
-        width: 7rem;
-        margin-left: auto;
+    form {
+        display: flex;
+        flex-direction: column;
+        .title {
+            text-transform: capitalize;
+            margin: 1rem 0 1.5rem 0;
+        }
+    
+        button {
+            margin: 1rem 0 .5rem 0;
+            width: 7rem;
+            margin-left: auto;
+        }
     }
 }
