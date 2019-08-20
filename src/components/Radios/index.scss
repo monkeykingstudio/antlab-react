@@ -15,9 +15,21 @@
         display: none;
         // if checkbox is checked
         &:checked + label {
+          color: $green;
+          -webkit-backface-visibility: visible !important;
+          backface-visibility: visible !important;
+          -webkit-animation-name: flipInY;
+          animation-name: flipInY;
+          transition: all .2s;
+
             &:before {
                 background-color: $green;
                 border-color: $green;
+                -webkit-backface-visibility: visible !important;
+                backface-visibility: visible !important;
+                -webkit-animation-name: flipInY;
+                animation-name: flipInY;
+                transition: all .2s;
             }            
         }   
       }
@@ -31,15 +43,24 @@
         color: black;
         font-size: 1.6rem;
         cursor: pointer;
+
+        &:hover {
+          &:before {
+            transition: all .2s;
+            border: .1rem solid $green;
+            background-color: $green;
+          }
+        }   
         
         &:before {
           content: '';
-          width: 2rem;
-          height: 2rem;
-          margin-left: 1.5rem;
+          width: 1.7rem;
+          height: 1.7rem;
+          margin-left: 1rem;
           border: .1rem solid $grey;
           background-color: $grey;
-          border-radius: .4rem;      
+          border-radius: .4rem;
+          transition: all .2s;
         }
       }
 }

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './index.scss';
 
 import Radio from './radio';
 
 const Radios = (props) => {
     const amount = props.amount;
+    const [radioCheck, setRadioCheck] = useState(3);
 
     return (
        <div id={props.id}>
@@ -17,10 +18,11 @@ const Radios = (props) => {
                'noon',
                'evening'
             ]}
-            // selected={i < radiosSelected}
+            checked={radioCheck === i}
            
-            onClick={() => {
-               console.log('click!');
+            onChange={() => {
+               console.log('change!')
+               setRadioCheck(i)
             }}
             />
         ))}

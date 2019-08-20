@@ -16,6 +16,7 @@ const Feeder = (props) => {
                 ]
             } id="Select" />
             <Radios id='Radios' amount={3}/>
+            <button>Feed!</button>
         </div>
     );
 };

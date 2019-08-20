@@ -3,6 +3,9 @@
 @import 'global/colors';
 @import 'global/fonts';
 
+@import 'global/animate';
+
+
 html {
     font-size: 62.5%;
     height: 100vh;
@@ -47,8 +50,18 @@ h1 {
     color: $black;
 }
 
-// .App {
-//     display: flex;
-//     flex-direction: column;
-//     min-height: 100vh;
-// }
+button {
+    color: white;
+    background-color: #6bce19;
+    border-radius: .4rem;
+    padding: .5rem;
+    transition: all .2s;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $dark-green;
+        transition: all .2s;
+    }
+}
