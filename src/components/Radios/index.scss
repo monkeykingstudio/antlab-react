@@ -1,0 +1,45 @@
+@import '../../scss/global/colors';
+
+#Radios {
+    margin: 1rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .radio + .radio {
+        margin: 0;
+    }
+    
+    & input[type=radio] {
+        display: none;
+        // if checkbox is checked
+        &:checked + label {
+            &:before {
+                background-color: $green;
+                border-color: $green;
+            }            
+        }   
+      }
+
+      & label {
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative;
+        align-items: center;
+        margin: .5rem;
+        color: black;
+        font-size: 1.6rem;
+        cursor: pointer;
+        
+        &:before {
+          content: '';
+          width: 2rem;
+          height: 2rem;
+          margin-left: 1.5rem;
+          border: .1rem solid $grey;
+          background-color: $grey;
+          border-radius: .4rem;      
+        }
+      }
+}

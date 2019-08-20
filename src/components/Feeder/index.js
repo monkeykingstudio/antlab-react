@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './index.scss';
 import Select from '../Select/index'
+import Radios from '../Radios';
 
 const Feeder = (props) => {
-
-    const [selected, setSelected] = useState(0); 
 
     return (
         <div id={props.id} >
@@ -16,6 +15,7 @@ const Feeder = (props) => {
                     'bug'
                 ]
             } id="Select" />
+            <Radios id='Radios' amount={3}/>
         </div>
     );
 };

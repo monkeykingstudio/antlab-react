@@ -1,5 +1,4 @@
 @import '../../scss/global/colors';
-@import '../../scss/global/fonts';
 
 #Navbar {
     display: flex;
@@ -8,6 +7,7 @@
     width: 24rem;
     background-color: $dark-grey;
     padding: 15px;
+    border-right: 1px solid #292929;
 
     span {
         color: white;

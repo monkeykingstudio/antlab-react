@@ -2,14 +2,15 @@ import React, {useState, useEffect} from 'react';
 import './index.scss';
 
 import Option from './option'
-import { statement } from '@babel/template';
 
 const Select = (props) => {
     const [selectedValue, setSelectedValue] = useState('select food');
+    const [selectedPeriod, setSelectedPeriod] = useState('');
+    const [date, setDate] = useState();
     
-    // useEffect(() => {
-    //     setSelectedValue('food')
-    // });
+    useEffect(() => {
+
+    });
 
     const handleChange = (e) => {
         setSelectedValue(e.target.value)
