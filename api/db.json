@@ -1,6 +1,19 @@
 {
-    "feeder": [{
-            
-        }
-    ]
+  "feeder": [
+    {
+      "food": "sweet liquid",
+      "time": 1,
+      "id": 1
+    },
+    {
+      "food": "bug",
+      "time": 2,
+      "id": 2
+    },
+    {
+      "food": "seeds",
+      "time": 0,
+      "id": 3
+    }
+  ]
 }

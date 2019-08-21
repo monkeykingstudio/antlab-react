@@ -1,19 +1,34 @@
 import React, {useState} from 'react';
+import axios from 'axios';
+
 import './index.scss';
 import Select from '../Select'
 import Radios from '../Radios';
-import History from './history';
+import History from '../History';
 
 const Feeder = (props) => {
-    const [food, setFood] = useState('');
-    const [dayTime, setDayTime] = useState(null);
 
-    const handleSubmit = () => {
-       
+    const [entry, setEntry] = useState({
+        "food": "sweet liquid",
+        "dayTime": null
+    });
+
+    const sendUserData = async () => {
+        axios.post('http://localhost:4000/feeder', {     
+               'food': entry.food,
+               'time': entry.dayTime
+        }).then(resp => {
+            console.log(resp.data);
+        }).catch(error => {
+            console.log(error);
+        });   
+      
     }
 
-    console.log('food state: ', food);
-    console.log('daytime state: ', dayTime);
+
+    const handleSubmit = () => {
+        sendUserData()
+    }
 
     return (
         <div id={props.id} >
@@ -29,17 +44,25 @@ const Feeder = (props) => {
                 } 
                 id="Select"
                 setFeederFood={(e) => {
-                    setFood(e);
+                    setEntry(
+                        prevState => {
+                            return { ...prevState, food: e }
+                        }
+                    );
                 }} 
                 />
                 <Radios 
                 id='Radios' 
                 amount={3} 
                 setFeederDayTime={(e) => {
-                    setDayTime(e);
+                    setEntry(
+                        prevState => {
+                            return { ...prevState, dayTime: e }
+                        }
+                    );
                 }}
                 />
-                <History />
+                <History id='History'/>
                 <button type='submit'>Feed!</button>
             </form>
         </div>
