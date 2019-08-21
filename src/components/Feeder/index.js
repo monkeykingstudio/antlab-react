@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import moment from 'moment';
 
 import './index.scss';
 import Select from '../Select'
@@ -16,7 +17,8 @@ const Feeder = (props) => {
     const sendUserData = async () => {
         axios.post('http://localhost:4000/feeder', {     
                'food': entry.food,
-               'time': entry.dayTime
+               'time': entry.dayTime,
+               'date': moment().format('LLL')
         }).then(resp => {
             console.log(resp.data);
         }).catch(error => {
@@ -24,7 +26,6 @@ const Feeder = (props) => {
         });   
       
     }
-
 
     const handleSubmit = () => {
         sendUserData()
@@ -62,7 +63,7 @@ const Feeder = (props) => {
                     );
                 }}
                 />
-                <History id='History'/>
+                <History id='History' maxRender={5}/>
                 <button type='submit'>Feed!</button>
             </form>
         </div>

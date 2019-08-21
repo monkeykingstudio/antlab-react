@@ -1,18 +1,33 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import './index.scss';
 
-const History = (props) => {
+import Line from './line';
 
-    const dbEmpty = true;
+const History = (props) => {
+    const [dbEmpty, setDbEmty] = useState(true);
+    const [data, setData] = useState(); 
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await axios(
+                'http://localhost:4000/feeder'
+            );  
+                let status = (Object.keys(result.data).length <= 0) ? true : false;
+                setData(result.data);
+                setDbEmty(status);
+        }; 
+        fetchData();
+    },[]);
 
     if(!dbEmpty) {
         return (
             <div id={props.id}>
-                <div className="line">fsdfsf</div>
-                <div className="line">sdfsdf</div>
-                <div className="line">sdf</div>
-                <div className="line">sdfsdf</div>
-                <div className="line">sfsdf</div>
+              {data.map((item, i) => (
+                <Line food={data[i].food} dayTime={data[i].time} day={data[i].date} key={i} />
+
+              ))}
+            
             </div>
          );
     } else {
@@ -23,8 +38,7 @@ const History = (props) => {
                 </div>
             </div>
          );
-    }
-    
+    }  
 };
 
 export default History;

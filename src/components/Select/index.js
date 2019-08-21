@@ -20,14 +20,14 @@ const Select = (props) => {
 
     return (     
         <select id={props.id} value={selectedValue}  onChange={handleChange}>
-                {props.options.map((option, i) => (
-                    <Option
-                        value={props.options[i]}
-                        key={i}
-                        id={i}
-                    />
-                ))}
-            </select>
+            {props.options.map((option, i) => (
+                <Option
+                    value={props.options[i]}
+                    key={i}
+                    id={i}
+                />
+            ))}
+        </select>
     );
 };
 

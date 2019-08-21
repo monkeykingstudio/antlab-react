@@ -23,12 +23,21 @@
         display: flex;
         padding: .2rem .5rem;
         align-items: center;
-        font-size: 1.6rem;
-        color: $mid-grey;    
-        text-transform: capitalize;            
+       
+        span {
+            font-size: 1.4rem;
+            color: $mid-grey;    
+            text-transform: capitalize; 
+            margin: .5rem;
+        }   
+        
+        .date {
+            font-weight: bold;
+            flex-grow: 1;
+        }
 
         &:nth-child(even) {
-            background-color: $grey;
+            background-color: white;
         }
         &:nth-child(odd) {
             background-color: $light-grey;
