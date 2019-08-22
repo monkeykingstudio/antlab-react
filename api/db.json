@@ -2,21 +2,33 @@
   "feeder": [
     {
       "food": "seeds",
-      "time": 2,
-      "date": "August 22, 2019 1:08 AM",
+      "time": 1,
+      "date": "08/22/2019",
       "id": 1
     },
     {
-      "food": "seeds",
+      "food": "bug",
       "time": 0,
-      "date": "August 22, 2019 1:08 AM",
+      "date": "08/22/2019",
       "id": 2
     },
     {
       "food": "sweet liquid",
-      "time": 0,
-      "date": "August 22, 2019 1:08 AM",
+      "time": 2,
+      "date": "08/22/2019",
       "id": 3
+    },
+    {
+      "food": "bug",
+      "time": 0,
+      "date": "08/22/2019",
+      "id": 4
+    },
+    {
+      "food": "seeds",
+      "time": 2,
+      "date": "08/22/2019",
+      "id": 5
     }
   ]
 }

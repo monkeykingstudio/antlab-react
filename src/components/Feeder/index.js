@@ -14,11 +14,15 @@ const Feeder = (props) => {
         "dayTime": null
     });
 
+    // pouvoir ajouter des aliments
+    // pouvoir supprimer ligne
+    // days ago sous la date
+
     const sendUserData = async () => {
         axios.post('http://localhost:4000/feeder', {     
                'food': entry.food,
                'time': entry.dayTime,
-               'date': moment().format('LLL')
+               'date': moment().format('L')
         }).then(resp => {
             console.log(resp.data);
         }).catch(error => {

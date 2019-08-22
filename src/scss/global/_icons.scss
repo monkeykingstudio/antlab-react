@@ -1,0 +1,17 @@
+.icon {
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: contain;
+    transition: all .2s;
+    cursor: pointer;
+    &:hover {
+        transition: all .2s;
+    }
+}
+.trash {
+    background-image: url('../../img/icons/trash.svg');
+    &:hover {
+        background-image: url('../../img/icons/trash-on.svg');
+    }
+}

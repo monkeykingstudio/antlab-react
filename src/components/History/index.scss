@@ -2,7 +2,7 @@
 
 #History {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     margin: 1rem 0 .5rem;
     border-radius: .3rem;
     overflow: hidden;
@@ -21,7 +21,7 @@
 
     .line {
         display: flex;
-        padding: .2rem .5rem;
+        padding: .5rem 1rem;
         align-items: center;
        
         span {
@@ -30,10 +30,41 @@
             text-transform: capitalize; 
             margin: .5rem;
         }   
+
+        .right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-grow: 1;
+        }
         
         .date {
             font-weight: bold;
-            flex-grow: 1;
+        }
+
+        .blue {
+            background-color: #19afce;
+            border-radius: 50rem;
+            font-size: 1.3rem;
+            color: white;
+            padding: .2rem 1.8rem;
+            font-weight: bold;
+        }
+        .orange {
+            background-color: #ce8419;
+            border-radius: 50rem;
+            font-size: 1.3rem;
+            color: white;
+            padding: .2rem 1.8rem;
+            font-weight: bold;
+        }
+        .purple {
+            background-color: #8619ce;
+            border-radius: 50rem;
+            font-size: 1.3rem;
+            color: white;
+            padding: .2rem 1.2rem;
+            font-weight: bold;
         }
 
         &:nth-child(even) {

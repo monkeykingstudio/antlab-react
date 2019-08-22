@@ -24,10 +24,12 @@ const History = (props) => {
         return (
             <div id={props.id}>
               {data.map((item, i) => (
-                <Line food={data[i].food} dayTime={data[i].time} day={data[i].date} key={i} />
-
-              ))}
-            
+                <Line 
+                food={data[i].food} 
+                dayTime={data[i].time} 
+                day={data[i].date} 
+                key={i} />
+              ))}     
             </div>
          );
     } else {
