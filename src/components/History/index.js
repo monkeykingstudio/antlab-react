@@ -14,7 +14,7 @@ const History = (props) => {
                 'http://localhost:4000/feeder'
             );  
                 let status = (Object.keys(result.data).length <= 0) ? true : false;
-                setData(result.data);
+                setData(result.data.reverse());
                 setDbEmty(status);
         }; 
         fetchData();
@@ -23,12 +23,17 @@ const History = (props) => {
     if(!dbEmpty) {
         return (
             <div id={props.id}>
-              {data.map((item, i) => (
+              {
+                data.map((item, i) => (
+                 i < props.maxEntries ?
                 <Line 
                 food={data[i].food} 
                 dayTime={data[i].time} 
                 day={data[i].date} 
-                key={i} />
+                key={i}
+                id={data[i].id}
+                 />
+                : null
               ))}     
             </div>
          );

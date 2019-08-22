@@ -2,7 +2,7 @@
 
 #History {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin: 1rem 0 .5rem;
     border-radius: .3rem;
     overflow: hidden;
@@ -21,25 +21,43 @@
 
     .line {
         display: flex;
-        padding: .5rem 1rem;
+        padding: .5rem 1.5rem .5rem 1rem;
         align-items: center;
+        justify-content: space-between;
+        max-height: 6.5rem;
+
+        .daytime {
+            font-weight: bold;
+        }
        
         span {
+            display: flex;
+            align-items: center;
             font-size: 1.4rem;
             color: $mid-grey;    
             text-transform: capitalize; 
-            margin: .5rem;
-        }   
+            margin: .4rem 0;
+        }
+        
+        .left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .middle {
+            display: flex;
+        }
 
         .right {
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            flex-grow: 1;
         }
-        
+
         .date {
             font-weight: bold;
+            margin-top: 0;
         }
 
         .blue {

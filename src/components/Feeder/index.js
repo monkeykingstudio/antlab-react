@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import Uuid from 'uuid/v4';
 
 import './index.scss';
 import Select from '../Select'
@@ -16,10 +17,10 @@ const Feeder = (props) => {
 
     // pouvoir ajouter des aliments
     // pouvoir supprimer ligne
-    // days ago sous la date
 
     const sendUserData = async () => {
-        axios.post('http://localhost:4000/feeder', {     
+        axios.post('http://localhost:4000/feeder', { 
+                'id': Uuid(),    
                'food': entry.food,
                'time': entry.dayTime,
                'date': moment().format('L')
@@ -67,7 +68,7 @@ const Feeder = (props) => {
                     );
                 }}
                 />
-                <History id='History' maxRender={5}/>
+                <History id='History' maxEntries={5}/>
                 <button type='submit'>Feed!</button>
             </form>
         </div>

@@ -15,3 +15,48 @@
         background-image: url('../../img/icons/trash-on.svg');
     }
 }
+
+.morning-icon {
+    margin-bottom: 0;
+     &:before {
+        content: '';
+        background-image: url('../../img/icons/morning.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: inline-block;
+        position: relative;
+        width: 2.2rem;
+        height: 2.2rem;
+        margin: 0 1rem 0 .5rem;
+     }  
+}
+    
+.noon-icon {
+    margin-bottom: 0;
+    &:before {
+        content: '';
+        background-image: url('../../img/icons/noon.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: inline-block;
+        position: relative;
+        width: 1.7rem;
+        height: 1.7rem;
+        margin: 0 1rem 0 .5rem;
+    }  
+}
+
+.evening-icon {
+    margin-bottom: 0;
+    &:before {
+        content: '';
+        background-image: url('../../img/icons/evening.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: inline-block;
+        position: relative;
+        width: 2rem;
+        height: 2rem;
+        margin: 0 1rem 0 .5rem;
+    }  
+}
