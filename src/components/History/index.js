@@ -5,7 +5,7 @@ import './index.scss';
 import Line from './line';
 
 const History = (props) => {
-    const [dbEmpty, setDbEmty] = useState(true);
+    const [dbEmpty, setDbEmpty] = useState(true);
     const [data, setData] = useState(); 
     
     useEffect(() => {
@@ -15,10 +15,38 @@ const History = (props) => {
             );  
                 let status = (Object.keys(result.data).length <= 0) ? true : false;
                 setData(result.data.reverse());
-                setDbEmty(status);
+                setDbEmpty(status);
         }; 
         fetchData();
     },[]);
+
+    // const delay = ( function() {
+    //     var timer = 0;
+    //     return function(callback, ms) {
+    //         clearTimeout (timer);
+    //         timer = setTimeout(callback, ms);
+    //     };
+    // })();
+
+
+    // faire du bouton un component 
+
+    const deleteEntry = id => {
+        let newData = [...data];
+    
+        for(let i=0; i<data.length; i++) {
+            if(data[i].id === id) {
+                 newData.splice(i,1)
+                 break;
+            } else {
+                continue;
+            }
+        }
+        setData(newData);
+        if(data.length <= 1) {
+            setDbEmpty(true)
+        }
+    }
 
     if(!dbEmpty) {
         return (
@@ -32,6 +60,9 @@ const History = (props) => {
                 day={data[i].date} 
                 key={i}
                 id={data[i].id}
+                deleteEntry={(e) => {
+                    deleteEntry(e)
+                }}
                  />
                 : null
               ))}     

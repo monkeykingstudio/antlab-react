@@ -15,9 +15,6 @@ const Feeder = (props) => {
         "dayTime": null
     });
 
-    // pouvoir ajouter des aliments
-    // pouvoir supprimer ligne
-
     const sendUserData = async () => {
         axios.post('http://localhost:4000/feeder', { 
                 'id': Uuid(),    
@@ -32,8 +29,10 @@ const Feeder = (props) => {
       
     }
 
-    const handleSubmit = () => {
-        sendUserData()
+    const handleSubmit = (e) => {
+        if(entry.food && entry.dayTime != null)
+        {sendUserData()}
+        else {alert('You must fill all fields');e.preventDefault()}
     }
 
     return (
@@ -45,7 +44,7 @@ const Feeder = (props) => {
                     [
                         'sweet liquid',
                         'seeds',
-                        'bug'
+                        'insect'
                     ]
                 } 
                 id="Select"

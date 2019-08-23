@@ -31,7 +31,7 @@ const Line = (props) => {
         case 'seeds':
             tagColor = 'orange'
             break
-        case 'bug':
+        case 'insect':
             tagColor = 'purple'
             break
         default:
@@ -39,12 +39,11 @@ const Line = (props) => {
     }
 
     const handleClick = () => {
-        console.log(props.id)
-        axios.delete(`http://localhost:4000/feeder/${props.id }`)
+        axios.delete(`http://localhost:4000/feeder/${props.id}`)
     }
    
     return (     
-        <div className="line">
+        <div id={props.id} className="line">
             <div className="left">
                 <span className={'daytime ' + iconDayTime}>{dayTime}</span>
                 <span className='date'>{props.day}</span>
@@ -53,7 +52,7 @@ const Line = (props) => {
                 <span className={tagColor}>{props.food}</span>
             </div>
             <div className='right'>
-                <div className="trash icon" onClick={handleClick}></div>
+                <div className="trash icon" onMouseDown={handleClick} onClick={() => props.deleteEntry(props.id)}></div>
             </div>
         </div>
     );
