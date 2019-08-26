@@ -1,0 +1,29 @@
+@import '../../scss/global/colors';
+
+#Population {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-radius: .4rem;
+
+    #Incrementor {
+        margin-bottom: 1rem;
+    }
+
+    .title {
+        text-transform: capitalize;
+        margin: 1rem 0 1.5rem 0;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    
+        button {
+            width: 100%;
+            margin: .5rem 0 0;
+            width: 8rem;
+            margin-left: auto;            
+        }
+    }
+}

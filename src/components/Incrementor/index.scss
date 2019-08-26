@@ -1,0 +1,66 @@
+@import '../../scss/global/colors';
+
+.Incrementor {
+    display: flex;
+    align-items: flex-end;
+    .title {
+        font-size: 1.4rem;
+        color: #4a4a4a;
+        margin: 0 0 .5rem 0 !important;
+    }
+
+    .inputs {
+        margin-top: .5rem;
+    }
+
+    .output-container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        margin: 0 .5rem;
+        .title {
+            text-align: right;
+            font-size: 1.2rem;
+        }
+    }
+
+    .outputs {
+        display: flex;
+        flex-grow: 1;
+        padding: 0 .5rem;
+
+        .output {
+            background-color: $light-grey;
+            padding: .5rem 1rem;
+            text-align: right;
+            font-size: 1.2rem;
+            flex-grow: 1;
+            color: #4a4a4a;
+            // margin: 0 .5rem;
+            border-radius: .3rem;
+            .title {
+                color: 4a4a4a;
+                text-transform: capitalize;
+                font-size: 1.2rem;
+            }
+            span {
+                font-size: 1.4rem;
+                font-family:'Myriad Pro';
+                color: #4a4a4a;
+            }
+        }
+    }
+
+    button {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        padding: .6rem 1.2rem;
+    }
+
+    .red {
+        background-color: $red;
+        &:hover {
+            background-color: $dark-red;
+        }
+    }
+}

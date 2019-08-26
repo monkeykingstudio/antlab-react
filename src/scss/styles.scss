@@ -12,6 +12,8 @@ html {
     height: 100vh;
 }
 
+*:focus {outline:none !important}
+
 p, span, a, input, button, div, .columns {
     font-size: 2.4rem;
     font-family: 'Myriad Pro Regular';
@@ -53,16 +55,43 @@ h1 {
 
 button {
     color: white;
-    background-color: #6bce19;
+    background-color: $green;
     border-radius: .4rem;
     padding: .8rem .5rem;
     transition: all .2s;
     border: none;
     font-size: 1.7rem;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 1.4rem;
 
     &:hover {
         background-color: $dark-green;
         transition: all .2s;
+    }
+}
+
+.grouped-button {
+    min-width: 6rem;
+    button {
+        background-color: $green;
+        padding: .5rem 1.3rem;
+        &:hover {
+            background-color: $dark-green;
+        }
+        &:first-child {
+            border-right: .1rem solid #75e41a;
+            border-radius: .5rem 0 0 .5rem;
+            &:hover {
+                border-color: #71d81b;
+            }
+        }
+        &:last-child {
+            border-left: .1rem solid #53a70d;
+            border-radius: 0 .5rem .5rem 0;    
+            &:hover {
+                border-color: #53a70d;
+            }        
+        }
     }
 }

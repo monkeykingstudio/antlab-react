@@ -12,9 +12,13 @@ const Navbar = (props) => {
                 <span>Lab</span>
             </div>
         </div>
-
-            <div className='square'></div>
-
+        <div className="baseline">
+                <span>breed</span>
+                <div className="square"></div>
+                <span>study</span>
+                <div className="square"></div>
+                <span>manage</span>
+            </div>
         </div>
     );
 };

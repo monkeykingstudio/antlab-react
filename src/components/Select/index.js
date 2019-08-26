@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './index.scss';
 
 import Option from './option'
@@ -6,12 +6,6 @@ import Option from './option'
 const Select = (props) => {
     const initState = props.options[0];
     const [selectedValue, setSelectedValue] = useState(initState);
-    // const [selectedPeriod, setSelectedPeriod] = useState('');
-    // const [date, setDate] = useState();
-    
-    useEffect(() => {
-
-    });
 
     const handleChange = (e) => {
         setSelectedValue(e.target.value);
