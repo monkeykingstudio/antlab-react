@@ -16,11 +16,11 @@ const Incrementor = (props) => {
     }
 
     const setPopulationDeaths = (e) => {
-        console.log('e: ',e)
+        console.log(props.id, 'e: ',e)
     }
 
     const setPopulationBirths = (e) => {
-        console.log('e: ',e)
+        console.log(props.id, 'e: ',e)
     }
 
     return (     

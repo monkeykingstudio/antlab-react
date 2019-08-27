@@ -47,8 +47,16 @@ const Population = (props) => {
            <span className="title">population</span>
            <span>248 individus</span>
            <Counter 
-           setPopulationDeath={}
-           setPopulationBirth={}
+        //    setPopulationDeath={
+        //     (e) => {
+        //             setEntry(
+        //                 prevState => {
+        //                     return { ...prevState, food: e }
+        //                 }
+        //             );
+        //         }
+        //    }
+        //    setPopulationBirth={}
            entries={[
                'major',
                'media',
