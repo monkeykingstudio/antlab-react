@@ -11,6 +11,12 @@
         margin-bottom: 1rem;
     }
 
+    .buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 2rem;
+    }
+
     .title {
         text-transform: capitalize;
         margin: 1rem 0 1.5rem 0;
