@@ -1,19 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './index.scss';
 import Counter from './counter';
 
 import axios from 'axios'
-
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const result = await axios(
-    //             'http://localhost:4000/population/1'
-    //         );  
-    //             setValue(result.data);
-    //     }; 
-    //     fetchData();
-    // },[]);
 
 const Population = (props) => {
 
@@ -37,20 +26,35 @@ const Population = (props) => {
         "births": 0
     })
 
+    const [data, setData] = useState({})
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await axios(
+                'http://localhost:4000/population'
+            );  
+            setData(result.data);
+            setMajor(data.major);
+            setMedia(data.media);
+            setMinor(data.minor);
+            setBreed(data.breed);
+        }; 
+        fetchData();
+    },[]);
+
     return (     
         <div id={props.id}>
            <span className="title">population</span>
            <span>248 individus</span>
-           <Counter entries={[
+           <Counter 
+           setPopulationDeath={}
+           setPopulationBirth={}
+           entries={[
                'major',
                'media',
                'minor',
                'breed'
            ]}/> 
-            {/* <div className="buttons">
-                <button>reset all</button>
-                <button>save</button>
-            </div> */}
         </div>
     );
 };

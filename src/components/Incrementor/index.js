@@ -7,12 +7,20 @@ const Incrementor = (props) => {
     const [births, setBirths] = useState(0)
     const [death, setDeath] = useState(0)
 
-    const handleDeath = () => {
+    const handleDeaths = () => {
         setDeath(death + 1)
     }
 
-    const handleBirth = () => {
+    const handleBirths = () => {
         setBirths(births + 1)        
+    }
+
+    const setPopulationDeaths = (e) => {
+        console.log('e: ',e)
+    }
+
+    const setPopulationBirths = (e) => {
+        console.log('e: ',e)
     }
 
     return (     
@@ -20,8 +28,17 @@ const Incrementor = (props) => {
             <div className='inputs'>
                 <p className="title">{props.datas[props.id]}</p>
                 <div className="grouped-button">
-                    <button onClick={handleDeath} type="button">-</button>
-                    <button onClick={handleBirth} type="button">+</button>
+                    <button 
+                        onClick={() => {
+                        setPopulationDeaths(death);
+                        }} 
+                        onMouseUp={handleDeaths} type="button">-</button>
+                        
+                    <button 
+                        onClick={() => {
+                        setPopulationBirths(births);
+                        }}  
+                        onMouseUp={handleBirths} type="button">+</button>
                 </div>
             </div>
 
@@ -32,7 +49,6 @@ const Incrementor = (props) => {
                 id={i}
                 births={births}
                 death={death}
-                // data={value}
                 name={props.datas[props.id]}
                 />      
             ))}

@@ -42,9 +42,9 @@ const Feeder = (props) => {
                 <Select 
                 options={
                     [
-                        'sweet liquid',
-                        'seeds',
-                        'insect'
+                    'sweet liquid',
+                    'seeds',
+                    'insect'
                     ]
                 } 
                 id="Select"
