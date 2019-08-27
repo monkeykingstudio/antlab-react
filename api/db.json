@@ -1,35 +1,39 @@
 {
   "feeder": [
     {
-      "id": "1bae0b2e-dd35-405b-951d-be53a3d50de4",
-      "food": "insect",
-      "time": 1,
-      "date": "08/24/2019"
-    },
-    {
-      "id": "5fe88985-ce6e-4e5e-8f2a-6811dd4a1752",
-      "food": "seeds",
-      "time": 2,
-      "date": "08/24/2019"
-    },
-    {
-      "id": "5571f772-1dff-4554-aea3-125481d53dd2",
-      "food": "sweet liquid",
-      "time": 0,
-      "date": "08/25/2019"
-    },
-    {
-      "id": "4c16b5e7-d36a-46d7-99b6-bbc86a0bceef",
+      "id": "945f6b37-184c-48d9-86ad-baea2eaa5262",
       "food": "sweet liquid",
       "time": 1,
-      "date": "08/25/2019"
-    },
-    {
-      "id": "291730ce-f9b0-49ec-9176-880dd901ae54",
-      "food": "sweet liquid",
-      "time": 2,
-      "date": "08/25/2019"
+      "date": "08/27/2019"
     }
   ],
-  "population": []
+  "population": [
+    {
+      "id": 1,
+      "major": [
+          {
+          "deaths": 1,
+          "births": 5
+          }
+      ],
+      "media": [
+          {
+          "deaths": 10,
+          "births": 5
+          }
+      ],
+      "minor": [
+          {
+          "deaths": 20,
+          "births": 10
+          }
+      ],
+      "breed": [
+          {
+          "deaths": 250,
+          "births": 50
+          }
+      ]
+    }
+  ]
 }

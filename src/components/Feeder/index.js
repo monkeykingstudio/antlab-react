@@ -25,14 +25,14 @@ const Feeder = (props) => {
             console.log(resp.data);
         }).catch(error => {
             console.log(error);
-        });   
-      
+        });     
     }
 
     const handleSubmit = (e) => {
         if(entry.food && entry.dayTime != null)
         {sendUserData()}
-        else {alert('You must fill all fields');e.preventDefault()}
+        else {alert('You must fill all fields');
+        e.preventDefault()}
     }
 
     return (

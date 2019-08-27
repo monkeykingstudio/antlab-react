@@ -3,18 +3,22 @@ import './index.scss';
 
 import Incrementor from '../Incrementor';
 
-
-
 const Counter = (props) => {
 
     return (    
         <div>
             {props.entries.map((output, i) => (
                 <Incrementor
-                nbr={2}
+                nbrOutputs={2}
                 className='Incrementor'
                 key={i}
                 id={i}
+                datas={[
+                    props.entries[0],
+                    props.entries[1],
+                    props.entries[2],
+                    props.entries[3]
+                ]}
                 />      
             ))}
         </div> 
