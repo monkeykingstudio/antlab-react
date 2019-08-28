@@ -5,28 +5,40 @@
       "food": "sweet liquid",
       "time": 1,
       "date": "08/27/2019"
+    },
+    {
+      "id": "ce9f7dad-a084-4921-902e-e426df3df099",
+      "food": "sweet liquid",
+      "time": 1,
+      "date": "08/29/2019"
+    },
+    {
+      "id": "6925b8d6-c271-469d-a884-af2cc09e26c7",
+      "food": "sweet liquid",
+      "time": 0,
+      "date": "08/29/2019"
     }
   ],
   "population": [
     {
       "id": 0,
-      "death": 0,
-      "births": 10
+      "death": 151,
+      "births": 45
     },
     {
       "id": 1,
-      "death": 0,
-      "births": 20
+      "death": 38,
+      "births": 202
     },
     {
       "id": 2,
-      "death": 0,
-      "births": 30
+      "death": 455,
+      "births": 1235
     },
     {
       "id": 3,
-      "death": 0,
-      "births": 40
+      "death": 5,
+      "births": 48
     }
   ]
 }

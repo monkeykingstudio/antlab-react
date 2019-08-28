@@ -6,17 +6,13 @@ import axios from 'axios'
 
 const Population = (props) => {
 
-    const [data, setData] = useState({})
-
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
                 'http://localhost:4000/population'
             );  
-            setData(result.data);
-
-            setMajor(result.data[0]);
-            
+            setOldState(result.data)
+            setMajor(result.data[0]);   
             setMedia(result.data[1]);
             setMinor(result.data[2]);
             setBreed(result.data[3]);
@@ -24,8 +20,12 @@ const Population = (props) => {
         fetchData();
     },[]);
 
+    const [oldState, setOldState] = useState({
+        death: 0,
+        births: 0
+    })
+
     const [major, setMajor] = useState({
-        id: 0,
         death: 0,
         births: 0
     })
@@ -44,59 +44,79 @@ const Population = (props) => {
         death: 0,
         births: 0
     })
-    console.log('data: ', data)
-    console.log('major: ', major)
+
+    const sendData = async (i, e) => {
+        axios.put(`http://localhost:4000/population/${i}`, e)
+        .then(resp => {
+            console.log(resp.data);
+        }).catch(error => {
+            console.log(error);
+        });     
+    }
 
     return (     
         <div id={props.id}>
            <span className="title">population</span>
            <span>248 individus</span>
+           <span>last update : 21/10/19, 22:05</span>
            <Counter 
-            setPopulationDeath={
-             (e, f) => {
-                     switch (f) {
-                         case 0:
-                            
+           save={
+               (f) => {
+                switch (f) {
+                        case 0:
+                            sendData(0, major)
                             break;
                         case 1:
-                             
+                            sendData(1, media)                              
                             break;
                         case 2:
-                             
+                            sendData(2, minor)                                                           
                             break;
                         case 3:
-                             
+                            sendData(3, breed)                                                           
                             break;
-                         default:
-                             break;
-                     }
-                }
+                        default:
+                            break;
+                    }
+               }
            }
-            setPopulationBirths={(e, f) => {
+            setPopulationDeath={
+             (e, f) => {
                 switch (f) {
-                case 0:
-                    setMajor(
-                        prevState => {
-                            console.log(major)
-                            return { ...prevState, "births": e}
-                        }
-                    );
+                case 0: 
+                    setMajor(prevState => {return { ...prevState, "death": e}});
                     break;
                 case 1:
-                        
+                    setMedia(prevState => {return { ...prevState, "death": e}});                        
                     break;
                 case 2:
-                        
+                    setMinor(prevState => {return { ...prevState, "death": e}});                                                
                     break;
                 case 3:
-                        
+                    setBreed(prevState => {return { ...prevState, "death": e}});                                                
                     break;
-
                 default:
                     break;
                 }
-            }
-           }
+            }}
+            setPopulationBirths={(e, f) => {
+                switch (f) {
+                case 0: 
+                    setMajor(prevState => {return { ...prevState, "births": e}});
+                    break;
+                case 1:
+                    setMedia(prevState => {return { ...prevState, "births": e}});                        
+                    break;
+                case 2:
+                    setMinor(prevState => {return { ...prevState, "births": e}});                                                
+                    break;
+                case 3:
+                    setBreed(prevState => {return { ...prevState, "births": e}});                                                
+                    break;
+                default:
+                    break;
+                }
+            }}
            entries={[
                'major',
                'media',
@@ -108,6 +128,12 @@ const Population = (props) => {
            minor={minor}
            breed={breed}
            /> 
+           <button onClick={() => {
+               setMajor(oldState[0])
+               setMedia(oldState[1])
+               setMinor(oldState[2])
+               setBreed(oldState[3])
+           }} className="red">clear</button>
         </div>
     );
 };

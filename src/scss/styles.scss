@@ -71,6 +71,13 @@ button {
     }
 }
 
+.red {
+    background-color: $red;
+    &:hover {
+        background-color: $dark-red;
+    }
+}
+
 .grouped-button {
     min-width: 6rem;
     button {

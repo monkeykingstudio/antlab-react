@@ -56,11 +56,4 @@
         font-size: 1.2rem;
         padding: .6rem 1.2rem;
     }
-
-    .red {
-        background-color: $red;
-        &:hover {
-            background-color: $dark-red;
-        }
-    }
 }

@@ -4,51 +4,43 @@ import Output from './output';
 
 const Incrementor = (props) => {
 
-    let bindValue;
-    switch (props.id) {
-        case 0:
-            bindValue = props.major;
-            break;
-        case 1:
-            bindValue = props.media;
-            break;
-        case 2:
-            bindValue = props.minor;
-            break;
-        case 3:
-            bindValue = props.breed;
-            break;                                       
-        default:
-            break;
-    }
-
-    const [births, setBirths] = useState(
-        0
-    )
-    const [death, setDeath] = useState(
-        bindValue.death
-    )
+    const [births, setBirths] = useState(0)
+    const [death, setDeath] = useState(0)
 
     useEffect(() => {
-    //    setBirths(props.major.births)
        switch (props.id) {
         case 0:
             setBirths(props.major.births);
+            setDeath(props.major.death);
             break;
         case 1:
             setBirths(props.media.births);
+            setDeath(props.media.death);
             break;
         case 2:
-            bindValue = props.minor;
+            setBirths(props.minor.births);  
+            setDeath(props.minor.death);
             break;
         case 3:
-            bindValue = props.breed;
+            setBirths(props.breed.births);
+            setDeath(props.breed.death);
             break;                                       
         default:
             break;
-    }
-      });
-
+        }
+    },
+    [
+    props.id, 
+    props.major.births,
+    props.major.death,
+    props.media.births,
+    props.media.death,
+    props.minor.births,
+    props.minor.death,
+    props.breed.births,
+    props.breed.death
+    ]);
+    
 
     const handleDeaths = () => {
         setDeath(death + 1)
@@ -59,18 +51,17 @@ const Incrementor = (props) => {
     }
 
     const setPopulationDeath = (e, f) => {
-        console.log('DEATH ID INC', f, ' e: ',e)
         props.setPopulationDeath(e, f)
     }
 
     const setPopulationBirths = (e, f) => {
-        console.log('BIRTH ID INC', f, ' e: ',e)
         props.setPopulationBirths(e, f)
     }
 
-    
-    console.log('bind value: ', bindValue)
-    console.log(births)
+    const save = (f) => {
+        props.save(f)
+    }
+
     return (     
         <div className='Incrementor'>
             <div className='inputs'>
@@ -101,7 +92,7 @@ const Incrementor = (props) => {
                 />      
             ))}
            </div>
-           <button className='red'>reset</button>
+           <button onClick={(f)=> {save(props.id)}}>save</button>
         </div>
     );
 };

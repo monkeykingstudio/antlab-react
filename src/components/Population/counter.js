@@ -6,13 +6,17 @@ import Incrementor from '../Incrementor';
 const Counter = (props) => {
 
     const setPopulationDeath= (e, f) => {
-        console.log('COUNTER', 'e: ', e, ' f: ', f)
         props.setPopulationDeath(e, f);     
     }
 
     const setPopulationBirths= (e, f) => {
-        console.log('COUNTER', 'e: ', e, ' f: ', f) 
         props.setPopulationBirths(e, f);     
+    }
+
+    const save = (f) => {
+        props.save(f)
+        console.log(f);
+
     }
 
     return (    
@@ -20,11 +24,14 @@ const Counter = (props) => {
             {props.entries.map((output, i) => (
                 <Incrementor
                 setPopulationDeath={(e, f) => {
-                            setPopulationDeath(e, f);
-                        }}
+                    setPopulationDeath(e, f);
+                }}
                 setPopulationBirths={(e, f) => {
-                            setPopulationBirths(e, f);
-                        }}
+                    setPopulationBirths(e, f);
+                }}
+                save={(f) => {
+                    save(f);
+                }}
                 nbrOutputs={2}
                 className='Incrementor'
                 key={i}
