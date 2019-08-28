@@ -9,30 +9,24 @@
   ],
   "population": [
     {
-      "major": [
-          {
-          "deaths": 1,
-          "births": 5
-          }
-      ],
-      "media": [
-          {
-          "deaths": 10,
-          "births": 5
-          }
-      ],
-      "minor": [
-          {
-          "deaths": 20,
-          "births": 10
-          }
-      ],
-      "breed": [
-          {
-          "deaths": 250,
-          "births": 50
-          }
-      ]
+      "id": 0,
+      "death": 0,
+      "births": 10
+    },
+    {
+      "id": 1,
+      "death": 0,
+      "births": 20
+    },
+    {
+      "id": 2,
+      "death": 0,
+      "births": 30
+    },
+    {
+      "id": 3,
+      "death": 0,
+      "births": 40
     }
   ]
 }
