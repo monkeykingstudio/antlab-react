@@ -25,10 +25,53 @@
         margin-top: 2rem;
     }
 
-    .title {
+    .population {
+        display: flex;
+        align-items: center;
         text-transform: capitalize;
-        margin: 1rem 0 1.5rem 0;
+        flex-grow: 1;
+        margin: .5rem 0 1rem 0;
+
+        .title {
+            text-transform: capitalize;
+            margin: 1rem 0 1.5rem 0;
+            flex-grow: 1;
+        }
+        .counts {
+            display: flex;
+            background-color: #dadada;
+            padding: .5rem 1rem;
+            border-radius: .5rem;
+            align-items: center;
+
+            .values {
+                display: flex;
+                flex-direction: column;
+                margin-right: 2rem;
+
+                span {
+                    font-size: 1.2rem;
+                    text-transform: capitalize;
+                    line-height: 1.7rem;
+                    color: black;
+                    color: #4a4a4a;
+                    font-family: 'Myriad Pro';
+                }
+            }
+
+            .count {
+                color: white;
+                padding: .5rem 1rem;
+                font-size: 1.2rem;
+                text-transform: capitalize;
+                background-color: #131313;
+                border-radius: .5rem;
+                font-family: 'Myriad Pro';
+            }
+        }
     }
+
+
     form {
         display: flex;
         flex-direction: column;

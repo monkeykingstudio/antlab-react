@@ -13,7 +13,7 @@
         display: flex;
         align-items: center;
         position: absolute;
-        top: 5rem;
+        top: 5.3rem;
         left: 8rem;
 
         span {
@@ -58,15 +58,24 @@
         width: 3.5rem;
         margin: 5px 5px 5px 25px;
 
-        // &:before {
-        //     font-size: 1rem;
-        //     color: $green;
-        //     background-color: white;
-        //     border-radius: 36rem;
-        //     padding: 0 5px;
-        //     content: 'bêta';
-        //     position: absolute;
-        // }
+        &:before {
+            font-size: 1rem;
+            color: white;
+            background-color: black;
+            border-radius: 36rem;
+            padding: 0 1rem;
+            top: -1.5rem;
+            content: 'bêta';
+            font-family: 'Myriad Pro Regular';
+            position: absolute;
+            font-weight: 900;
+            text-transform: capitalize;
+            left: -2.9rem;
+            animation-name: heartBeat;
+            animation-duration: 1.3s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
     }
 
     .sub-title {

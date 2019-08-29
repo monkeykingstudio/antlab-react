@@ -71,6 +71,10 @@ const Incrementor = (props) => {
         props.setPopulationBirths(e, f)
     }
 
+    const resetState = (id) => {
+        props.resetState(props.id)
+    }
+
     return (     
         <div className='Incrementor'>
             <div className='inputs'>
@@ -101,7 +105,8 @@ const Incrementor = (props) => {
                 />      
             ))}
            </div>
-           <button className='red'>reset</button>
+           <button onClick={(id) => {resetState(id)}} 
+           className='red'>reset</button>
         </div>
     );
 };

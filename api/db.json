@@ -22,18 +22,18 @@
   "population": [
     {
       "id": 0,
-      "death": 16,
-      "births": 27
+      "death": 33,
+      "births": 50
     },
     {
       "id": 1,
-      "death": 45,
-      "births": 216
+      "death": 63,
+      "births": 222
     },
     {
       "id": 2,
-      "death": 455,
-      "births": 1236
+      "death": 470,
+      "births": 1249
     },
     {
       "id": 3,

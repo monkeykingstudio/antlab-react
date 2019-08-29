@@ -13,6 +13,10 @@ const Counter = (props) => {
         props.setPopulationBirths(e, f);     
     }
 
+    const resetState = (id) => {
+        props.resetState(id)
+    }
+
     return (    
         <div>
             {props.entries.map((output, i) => (
@@ -23,6 +27,7 @@ const Counter = (props) => {
                 setPopulationBirths={(e, f) => {
                     setPopulationBirths(e, f);
                 }}
+                resetState={(id)=> {resetState(id)}}
                 nbrOutputs={2}
                 className='Incrementor'
                 key={i}
