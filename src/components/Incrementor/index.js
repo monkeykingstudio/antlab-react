@@ -1,59 +1,74 @@
 import React, {useState, useEffect} from 'react';
 import './index.scss';
-import axios from 'axios'
 import Output from './output';
+
+import axios from 'axios'
 
 const Incrementor = (props) => {
 
-    const [value, setValue] = useState({
-        "id": 1,
-        "major": [
-            {
-            "deaths": 1,
-            "births": 5
-            }
-        ],
-        "media": [
-            {
-            "deaths": 10,
-            "births": 5
-            }
-        ],
-        "minor": [
-            {
-            "deaths": 20,
-            "births": 10
-            }
-        ],
-        "breed": [
-            {
-            "deaths": 250,
-            "births": 50
-            }
-        ]
-    })
+    const [births, setBirths] = useState(0)
+    const [death, setDeath] = useState(0)
+
+    // const sendData = async (i, e) => {
+    //     axios.put(`http://localhost:4000/population/${i}`, e)
+    //     .then(resp => {
+    //         console.log(resp.data);
+    //     }).catch(error => {
+    //         console.log(error);
+    //     });     
+    // }
 
     useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios(
-                'http://localhost:4000/population/1'
-            );  
-                setValue(result.data);
-        }; 
-        fetchData();
-    },[]);
+       switch (props.id) {
+        case 0:
+            setBirths(props.major.births);
+            setDeath(props.major.death);
+            break;
+        case 1:
+            setBirths(props.media.births);
+            setDeath(props.media.death);
+            break;
+        case 2:
+            setBirths(props.minor.births);  
+            setDeath(props.minor.death);
+            break;
+        case 3:
+            setBirths(props.breed.births);
+            setDeath(props.breed.death);
+            break;                                       
+        default:
+            break;
+        }
+    },
+    [
+    props.id, 
+    props.major.births,
+    props.major.death,
+    props.media.births,
+    props.media.death,
+    props.minor.births,
+    props.minor.death,
+    props.breed.births,
+    props.breed.death
+    ]);
+    
 
     const handleDeaths = () => {
-        console.log(props.id);
-        setValue(
-            // prevState => {
-            //     return { ...prevState, value.major[0]['deaths']: 5000 }
-            // }
-        )
+        props.setPopulationDeath(death + 1 , props.id)
+        setDeath(death + 1)
     }
 
     const handleBirths = () => {
-        console.log(props.id);        
+        props.setPopulationBirths(births + 1 , props.id)
+        setBirths(births + 1)        
+    }
+
+    const setPopulationDeath = (e, f) => {
+        props.setPopulationDeath(e, f)
+    }
+
+    const setPopulationBirths = (e, f) => {
+        props.setPopulationBirths(e, f)
     }
 
     return (     
@@ -61,8 +76,17 @@ const Incrementor = (props) => {
             <div className='inputs'>
                 <p className="title">{props.datas[props.id]}</p>
                 <div className="grouped-button">
-                    <button onClick={handleDeaths} type="button">-</button>
-                    <button onClick={handleBirths} type="button">+</button>
+                    <button 
+                        onClick={(e, f) => {
+                            setPopulationDeath(death, props.id);
+                        }} 
+                        onMouseUp={handleDeaths} type="button">-</button>
+                        
+                    <button 
+                        onClick={(e, f) => {
+                            setPopulationBirths(births, props.id);
+                        }}  
+                        onMouseUp={handleBirths} type="button">+</button>
                 </div>
             </div>
 
@@ -71,7 +95,8 @@ const Incrementor = (props) => {
                 <Output
                 key={i}
                 id={i}
-                data={value}
+                births={births}
+                death={death}
                 name={props.datas[props.id]}
                 />      
             ))}

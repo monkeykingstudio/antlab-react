@@ -18,7 +18,7 @@ p, span, a, input, button, div, .columns {
     font-size: 2.4rem;
     font-family: 'Myriad Pro Regular';
     line-height: 2.4rem;
-    letter-spacing: .02rem;
+    letter-spacing: .045rem;
     color: $grey;
 }
 
@@ -68,6 +68,13 @@ button {
     &:hover {
         background-color: $dark-green;
         transition: all .2s;
+    }
+}
+
+.red {
+    background-color: $red;
+    &:hover {
+        background-color: $dark-red;
     }
 }
 
