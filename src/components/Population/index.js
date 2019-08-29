@@ -60,40 +60,24 @@ const Population = (props) => {
            <span>248 individus</span>
            <span>last update : 21/10/19, 22:05</span>
            <Counter 
-           save={
-               (f) => {
-                switch (f) {
-                        case 0:
-                            sendData(0, major)
-                            break;
-                        case 1:
-                            sendData(1, media)                              
-                            break;
-                        case 2:
-                            sendData(2, minor)                                                           
-                            break;
-                        case 3:
-                            sendData(3, breed)                                                           
-                            break;
-                        default:
-                            break;
-                    }
-               }
-           }
             setPopulationDeath={
              (e, f) => {
                 switch (f) {
                 case 0: 
                     setMajor(prevState => {return { ...prevState, "death": e}});
+                    sendData(0, major)
                     break;
                 case 1:
-                    setMedia(prevState => {return { ...prevState, "death": e}});                        
+                    setMedia(prevState => {return { ...prevState, "death": e}});  
+                    sendData(1, media)
                     break;
                 case 2:
-                    setMinor(prevState => {return { ...prevState, "death": e}});                                                
+                    setMinor(prevState => {return { ...prevState, "death": e}});   
+                    sendData(2, minor)
                     break;
                 case 3:
-                    setBreed(prevState => {return { ...prevState, "death": e}});                                                
+                    setBreed(prevState => {return { ...prevState, "death": e}});
+                    sendData(3, breed)
                     break;
                 default:
                     break;
@@ -103,15 +87,19 @@ const Population = (props) => {
                 switch (f) {
                 case 0: 
                     setMajor(prevState => {return { ...prevState, "births": e}});
+                    sendData(0, major)
                     break;
                 case 1:
-                    setMedia(prevState => {return { ...prevState, "births": e}});                        
+                    setMedia(prevState => {return { ...prevState, "births": e}});  
+                    sendData(1, media)
                     break;
                 case 2:
-                    setMinor(prevState => {return { ...prevState, "births": e}});                                                
+                    setMinor(prevState => {return { ...prevState, "births": e}});    
+                    sendData(2, minor)
                     break;
                 case 3:
-                    setBreed(prevState => {return { ...prevState, "births": e}});                                                
+                    setBreed(prevState => {return { ...prevState, "births": e}});  
+                    sendData(3, breed)
                     break;
                 default:
                     break;
@@ -128,12 +116,20 @@ const Population = (props) => {
            minor={minor}
            breed={breed}
            /> 
-           <button onClick={() => {
+           <button 
+           onClick={()=> {
+               sendData(0, major)
+               sendData(1, media)
+               sendData(2, minor)
+               sendData(3, breed)
+            }}           
+           onMouseUp={() => {
                setMajor(oldState[0])
                setMedia(oldState[1])
                setMinor(oldState[2])
                setBreed(oldState[3])
-           }} className="red">clear</button>
+
+           }} className="clear red">reset all</button>
         </div>
     );
 };

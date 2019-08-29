@@ -68,7 +68,7 @@ const Feeder = (props) => {
                 }}
                 />
                 <History id='History' maxEntries={5}/>
-                <button type='submit'>Feed!</button>
+                <button type='submit'>Feed</button>
             </form>
         </div>
     );

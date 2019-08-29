@@ -2,10 +2,21 @@ import React, {useState, useEffect} from 'react';
 import './index.scss';
 import Output from './output';
 
+import axios from 'axios'
+
 const Incrementor = (props) => {
 
     const [births, setBirths] = useState(0)
     const [death, setDeath] = useState(0)
+
+    // const sendData = async (i, e) => {
+    //     axios.put(`http://localhost:4000/population/${i}`, e)
+    //     .then(resp => {
+    //         console.log(resp.data);
+    //     }).catch(error => {
+    //         console.log(error);
+    //     });     
+    // }
 
     useEffect(() => {
        switch (props.id) {
@@ -43,10 +54,12 @@ const Incrementor = (props) => {
     
 
     const handleDeaths = () => {
+        props.setPopulationDeath(death + 1 , props.id)
         setDeath(death + 1)
     }
 
     const handleBirths = () => {
+        props.setPopulationBirths(births + 1 , props.id)
         setBirths(births + 1)        
     }
 
@@ -56,10 +69,6 @@ const Incrementor = (props) => {
 
     const setPopulationBirths = (e, f) => {
         props.setPopulationBirths(e, f)
-    }
-
-    const save = (f) => {
-        props.save(f)
     }
 
     return (     
@@ -92,7 +101,7 @@ const Incrementor = (props) => {
                 />      
             ))}
            </div>
-           <button onClick={(f)=> {save(props.id)}}>save</button>
+           <button className='red'>reset</button>
         </div>
     );
 };
