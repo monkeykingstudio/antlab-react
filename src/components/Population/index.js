@@ -67,9 +67,9 @@ const Population = (props) => {
                 <span className="title">population</span>
                 <div className="counts">
                    <div className="values">
-                    <span>majors: {totalMajor} </span>
-                    <span>media: {totalMedia}</span>
-                    <span>minor: {totalMinor}</span>
+                    <span>majors: <span className='numbers'>{totalMajor}</span> </span>
+                    <span>media: <span className='numbers'>{totalMedia}</span></span>
+                    <span>minor: <span className='numbers'>{totalMinor}</span></span>
                    </div>
                     <span className='count'>{`${totalAnts} ants`}</span>
 
