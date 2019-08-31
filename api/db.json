@@ -1,38 +1,26 @@
 {
   "feeder": [
     {
-      "id": "3eb3d6e1-dac9-4b02-a386-98842257fa69",
-      "food": "seeds",
-      "time": 2,
-      "date": "08/29/2019"
-    },
-    {
-      "id": "9f1338db-0824-4d74-9b24-a23d006df767",
-      "food": "seeds",
+      "id": "edff464f-9d2f-495a-b07a-9a8a9e10ce2d",
+      "food": "insect",
       "time": 1,
-      "date": "08/29/2019"
-    },
-    {
-      "id": "bb311e3c-7521-40f7-914f-1906cdaa23b9",
-      "food": "sweet liquid",
-      "time": 0,
       "date": "08/29/2019"
     }
   ],
   "population": [
     {
       "id": 0,
-      "death": 33,
-      "births": 53
+      "death": 35,
+      "births": 91
     },
     {
       "id": 1,
       "death": 63,
-      "births": 225
+      "births": 227
     },
     {
       "id": 2,
-      "death": 472,
+      "death": 474,
       "births": 1252
     },
     {

@@ -43,11 +43,14 @@
             padding: .5rem 1rem;
             border-radius: .5rem;
             align-items: center;
+            flex-grow: 1;
 
             .values {
                 display: flex;
                 flex-direction: column;
                 margin-right: 2rem;
+                flex-grow: 1;
+
 
                 span {
                     font-size: 1.2rem;
@@ -65,7 +68,7 @@
 
             .count {
                 color: white;
-                padding: .5rem 1rem;
+                padding: 1rem;
                 font-size: 1.2rem;
                 text-transform: capitalize;
                 background-color: #131313;

@@ -39,6 +39,8 @@ const Incrementor = (props) => {
         default:
             break;
         }
+
+        // return(console.log('bwaaaah'))
     },
     [
     props.id, 
