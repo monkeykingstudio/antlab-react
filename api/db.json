@@ -5,17 +5,29 @@
       "food": "insect",
       "time": 1,
       "date": "08/29/2019"
+    },
+    {
+      "id": "0eb32993-5dad-4b80-937a-10abfba8a32a",
+      "food": "insect",
+      "time": 0,
+      "date": "09/03/2019"
+    },
+    {
+      "id": "99304bbf-efee-4dad-b1a5-a0571e85dc00",
+      "food": "seeds",
+      "time": 2,
+      "date": "09/03/2019"
     }
   ],
   "population": [
     {
       "id": 0,
       "death": 35,
-      "births": 91
+      "births": 92
     },
     {
       "id": 1,
-      "death": 63,
+      "death": 64,
       "births": 227
     },
     {

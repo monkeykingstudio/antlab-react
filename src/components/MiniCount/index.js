@@ -1,23 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import './index.scss';
-import useEvent from './useEvent';
+// import useEvent from './useEvent';
+import axios from 'axios'
 
 const MiniCount = (props) => {
+  const [data, setData] = useState({ data:[]});
 
-    const [count, setCount] = useState(0);
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        'http://localhost:3001/api/population',
+      );
+      setData(result.data);
+    };
+    fetchData();
+  }, []);
 
-    useEffect(() => {
-      document.title = `You clicked ${count} times`;
-    });
-  
-    return (
-      <div>
-        <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>
-          Click me
-        </button>
-      </div>
-    );
-};
-
+  return (
+    <ul>
+    {data.data.map(item => (
+        <li key={item._id}>
+         <p>population: {item.type}</p>
+         <span>morts: {item.death}, naissances: {item.birth}</span>
+        </li>
+      ))}
+    
+    </ul>
+  );
+}
 export default MiniCount;
