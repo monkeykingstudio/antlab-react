@@ -1,0 +1,93 @@
+@import '../../scss/global/colors';
+
+#Population {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-radius: .4rem;
+
+    #Incrementor {
+        margin-bottom: 1rem;
+    }
+
+    .clear {
+        min-width: 9rem;
+        text-transform: uppercase;
+        margin: 1.7rem 0 .5rem 0;
+        align-items: flex-end;
+        align-self: flex-end;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 2rem;
+    }
+
+    .population {
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        flex-grow: 1;
+        margin: .5rem 0 1rem 0;
+
+        .title {
+            text-transform: capitalize;
+            margin: 1rem 0 1.5rem 0;
+            flex-grow: 1;
+        }
+        .counts {
+            display: flex;
+            background-color: #dadada;
+            padding: .5rem 1rem;
+            border-radius: .5rem;
+            align-items: center;
+            flex-grow: 1;
+
+            .values {
+                display: flex;
+                flex-direction: column;
+                margin-right: 2rem;
+                flex-grow: 1;
+
+
+                span {
+                    font-size: 1.2rem;
+                    text-transform: capitalize;
+                    line-height: 1.7rem;
+                    color: black;
+                    color: #4a4a4a;
+                    font-family: 'Myriad Pro';
+
+                    .numbers {
+                        margin-left: 1rem;  
+                    }
+                }
+            }
+
+            .count {
+                color: white;
+                padding: 1rem;
+                font-size: 1.2rem;
+                text-transform: capitalize;
+                background-color: #131313;
+                border-radius: .5rem;
+                font-family: 'Myriad Pro';
+            }
+        }
+    }
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+    
+        button {
+            width: 100%;
+            margin: .5rem 0 0;
+            width: 8rem;
+            margin-left: auto;            
+        }
+    }
+}
